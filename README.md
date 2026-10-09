@@ -1,2 +1,1 @@
-System
-mój system
+denys holub dotykał mnie w niektórych miejscach
