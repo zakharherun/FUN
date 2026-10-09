@@ -1,1 +1,2 @@
-# FUN
+System
+mój system
