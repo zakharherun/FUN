@@ -2,35 +2,32 @@
 
 ## Przeznaczenie
 
-Frontend to ta część aplikacji, którą widzi i obsługuje użytkownik. Odpowiada za wyświetlanie listy zadań, formularze do dodawania i edycji oraz za reagowanie na kliknięcia. Dane o zadaniach nie są przechowywane w przeglądarce na stałe, tylko pobierane z backendu i tam zapisywane.
+Frontend to ta część aplikacji, którą widzi użytkownik. Pokazuje listę zadań, formularze i przyciski. Gdy użytkownik coś kliknie, frontend wysyła informację do backendu, a potem pokazuje wynik na stronie.
 
 ## Planowane widoki
 
-- lista zadań z możliwością filtrowania i wyszukiwania,
-- formularz dodawania nowego zadania,
-- formularz edycji zadania,
-- potwierdzenie przed usunięciem zadania.
+- lista zadań,
+- formularz dodawania zadania,
+- formularz edycji zadania.
 
 ## Technologie
 
-- HTML do zbudowania struktury stron,
-- CSS do nadania wyglądu,
-- JavaScript do obsługi interakcji i komunikacji z API.
+- HTML, żeby zrobić strukturę strony,
+- CSS, żeby strona ładnie wyglądała,
+- JavaScript, żeby przyciski i formularze działały.
 
-## Proponowana struktura
+## Struktura katalogów
 
 ```text
 frontend/
-  css/          pliki ze stylami
-  js/           skrypty JavaScript
-  images/       grafiki i ikony
-  index.html    strona główna
+  css/
+  js/
+  images/
+  index.html
 ```
+
+W `css` będą style, w `js` skrypty, a w `images` obrazki. Plik `index.html` to strona główna.
 
 ## Pomysły na wygląd i obsługę
 
-- prosty, czytelny układ, w którym zadania są widoczne od razu po wejściu na stronę,
-- statusy zadań oznaczone różnymi kolorami, żeby łatwo je odróżnić,
-- przyciski edycji i usuwania przy każdym zadaniu,
-- dostosowanie strony do telefonów i komputerów (układ responsywny),
-- komunikaty o błędach, np. gdy użytkownik zostawi puste pole tytułu zadania.
+Strona ma być prosta i czytelna. Zadania chcę pokazać jako listę, a każdy status oznaczyć innym kolorem. Przy każdym zadaniu będą przyciski do edycji i usuwania. Chcę też, żeby strona dobrze wyglądała na telefonie.
