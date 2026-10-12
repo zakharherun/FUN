@@ -24,7 +24,7 @@ jobs:
         run: npx --yes html-validate@9 "frontend/**/*.html"
 
       - name: Check CSS syntax
-        run: npx --yes stylelint@16 --allow-empty-input "frontend/**/*.css"
+        run: npx --yes stylelint@16 "frontend/**/*.css"
 
       - name: Check JavaScript syntax
         run: |
