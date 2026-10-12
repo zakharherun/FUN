@@ -1,33 +1,37 @@
 # Frontend
 
-## Przeznaczenie
+## Rola w projekcie
 
-Frontend to ta część aplikacji, którą widzi użytkownik. Pokazuje listę zadań, formularze i przyciski. Gdy użytkownik coś kliknie, frontend wysyła informację do backendu, a potem pokazuje wynik na stronie.
+Frontend to część aplikacji, którą użytkownik widzi i z którą pracuje na co dzień. Odpowiada za wyświetlanie listy zadań, obsługę formularzy oraz komunikację z backendem. Sam nie przechowuje danych na stałe, tylko wysyła do API prośby o ich pobranie lub zapisanie.
 
 ## Planowane widoki
 
-- lista zadań,
-- formularz dodawania zadania,
-- formularz edycji zadania.
+- lista zadań z wyszukiwaniem i filtrowaniem,
+- formularz dodawania nowego zadania,
+- formularz edycji zadania,
+- komunikaty informujące o powodzeniu lub błędzie operacji.
 
 ## Technologie
 
-- HTML, żeby zrobić strukturę strony,
-- CSS, żeby strona ładnie wyglądała,
-- JavaScript, żeby przyciski i formularze działały.
+- HTML do budowy struktury stron,
+- CSS do stylowania i układu elementów,
+- JavaScript do obsługi kliknięć, formularzy i zapytań do API.
 
-## Struktura katalogów
+## Założenia dotyczące wyglądu i obsługi
+
+- prosty, przejrzysty układ z dużą ilością wolnej przestrzeni,
+- statusy zadań wyróżnione kolorami, aby były widoczne na pierwszy rzut oka,
+- przyciski edycji i usuwania przy każdym zadaniu,
+- pole wyszukiwania umieszczone nad listą,
+- układ responsywny, dopasowany do telefonów i małych ekranów,
+- potwierdzenie przed usunięciem zadania.
+
+## Planowana struktura katalogów
 
 ```text
 frontend/
-  css/
-  js/
-  images/
-  index.html
+  css/          # arkusze stylów
+  js/           # skrypty
+  images/       # grafiki i ikony (planowane)
+  index.html    # strona główna
 ```
-
-W `css` będą style, w `js` skrypty, a w `images` obrazki. Plik `index.html` to strona główna.
-
-## Pomysły na wygląd i obsługę
-
-Strona ma być prosta i czytelna. Zadania chcę pokazać jako listę, a każdy status oznaczyć innym kolorem. Przy każdym zadaniu będą przyciski do edycji i usuwania. Chcę też, żeby strona dobrze wyglądała na telefonie.
