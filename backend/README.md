@@ -2,33 +2,28 @@
 
 ## Przeznaczenie
 
-Backend to "zaplecze" aplikacji, czyli program działający na serwerze. Przyjmuje żądania z frontendu, sprawdza, czy dane są poprawne, a następnie zapisuje je w bazie lub pobiera z niej zadania. Dzięki temu frontend nie musi znać szczegółów działania bazy danych.
+Backend to część aplikacji, która działa na serwerze. Odbiera prośby z frontendu, zapisuje zadania w bazie danych i pobiera je z powrotem. Użytkownik go nie widzi, ale bez niego zadania nie byłyby nigdzie zapisywane.
 
-## Komunikacja
+## Komunikacja z bazą danych
 
-Backend udostępnia API, z którego korzysta frontend, i komunikuje się z bazą danych PostgreSQL. Schemat działania jest następujący:
+Backend udostępnia API i łączy się z bazą PostgreSQL. Frontend nie rozmawia z bazą bezpośrednio, tylko przez backend.
 
-1. Użytkownik wykonuje akcję na stronie (np. dodaje zadanie).
-2. Frontend wysyła żądanie do API.
-3. Backend przetwarza żądanie i zapisuje lub odczytuje dane w bazie PostgreSQL.
-4. Backend odsyła odpowiedź, którą frontend pokazuje użytkownikowi.
+## Planowane endpointy API
 
-## Planowane endpointy
+- GET /api/tasks, pobranie listy zadań,
+- POST /api/tasks, dodanie nowego zadania,
+- PUT /api/tasks/{id}, zmiana zadania,
+- DELETE /api/tasks/{id}, usunięcie zadania.
 
-| Metoda | Adres | Działanie |
-|---|---|---|
-| GET | `/api/tasks` | pobranie listy zadań |
-| POST | `/api/tasks` | dodanie nowego zadania |
-| PUT | `/api/tasks/{id}` | edycja zadania o podanym identyfikatorze |
-| DELETE | `/api/tasks/{id}` | usunięcie zadania o podanym identyfikatorze |
-
-## Proponowana struktura
+## Struktura projektu
 
 ```text
 backend/
-  Controllers/   obsługa żądań HTTP i endpointów
-  Models/        opis danych, np. klasa zadania
-  Services/      logika działania aplikacji
-  Data/          połączenie z bazą danych
-  Tests/         testy backendu
+  Controllers/
+  Models/
+  Services/
+  Data/
+  Tests/
 ```
+
+W `Controllers` będą endpointy, w `Models` opis zadania, w `Services` logika aplikacji, a w `Data` połączenie z bazą. W `Tests` będą testy.

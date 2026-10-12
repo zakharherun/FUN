@@ -1,60 +1,41 @@
 # Task Manager
 
-Internetowy system zarządzania zadaniami tworzony w ramach praktyk INF.03.
-
 ## Opis projektu
 
-Task Manager to aplikacja webowa, w której użytkownik może zapisywać swoje zadania, oglądać je w jednym miejscu i oznaczać, na jakim etapie się znajdują. Zamiast notatek rozrzuconych w różnych miejscach wszystkie sprawy do zrobienia są zebrane w jednej, uporządkowanej liście.
-
-Projekt składa się z trzech części: strony internetowej (frontend), serwera z API (backend) oraz bazy danych, w której przechowywane są zadania.
+Task Manager to prosta strona internetowa do zapisywania zadań. Można w niej dodać zadanie, zobaczyć wszystkie swoje zadania na liście i zmienić ich status, na przykład z "do zrobienia" na "zrobione". Dzięki temu wszystkie rzeczy do zrobienia są w jednym miejscu.
 
 ## Cel projektu
 
-Głównym celem jest nauczenie się, jak wygląda praca nad prawdziwą aplikacją od początku do końca. W trakcie realizacji projektu chcę:
-
-- zaprojektować i wykonać prosty interfejs użytkownika,
-- zbudować API, które obsługuje zadania i łączy się z bazą danych,
-- poznać pracę zespołową w Git i GitHub (branche, pull requesty, code review),
-- nauczyć się dokumentować projekt i pilnować jakości kodu za pomocą CI.
+Chcę w tym projekcie nauczyć się, jak powstaje cała aplikacja: od strony, którą widzi użytkownik, przez serwer, aż po bazę danych. Chcę też nauczyć się pracować w Git i GitHub oraz pisać dokumentację do projektu.
 
 ## Funkcjonalności
 
-- dodawanie nowych zadań,
-- edycja istniejących zadań,
+- dodawanie zadań,
+- edycja zadań,
 - usuwanie zadań,
-- zmiana statusu zadania (np. do zrobienia, w trakcie, zrobione),
+- zmiana statusu zadania,
 - wyszukiwanie i filtrowanie zadań.
 
 ## Technologie
 
-| Część projektu | Technologie |
-|---|---|
-| Frontend | HTML, CSS, JavaScript |
-| Backend | API w języku wybranym w kolejnych etapach (np. C#) |
-| Baza danych | PostgreSQL |
-| Kontrola wersji | Git i GitHub |
-| Automatyczne sprawdzanie kodu | GitHub Actions (CI) |
+- frontend: HTML, CSS i JavaScript,
+- backend: API, język zostanie wybrany później,
+- baza danych: PostgreSQL,
+- Git i GitHub do pracy nad kodem,
+- GitHub Actions do automatycznego sprawdzania projektu.
 
 ## Struktura projektu
 
 ```text
-frontend/   strona internetowa (widoki, style, skrypty)
-backend/    serwer i API
-database/   skrypty i opis bazy danych
-docs/       dodatkowa dokumentacja i zrzuty ekranu
-tests/      testy aplikacji
+frontend/
+backend/
+database/
+docs/
+tests/
 ```
+
+W folderze `frontend` jest strona internetowa, w `backend` serwer, a w `database` rzeczy związane z bazą danych. Folder `docs` jest na dodatkową dokumentację, a `tests` na testy.
 
 ## Uruchomienie
 
 Ta sekcja zostanie uzupełniona w kolejnych etapach projektu.
-
-## Status projektu
-
-- [x] Utworzenie repozytorium
-- [x] Konfiguracja zabezpieczeń gałęzi `main`
-- [x] Dodanie CI w GitHub Actions
-- [x] Przygotowanie dokumentacji
-- [ ] Przygotowanie frontendu
-- [ ] Utworzenie API
-- [ ] Połączenie z bazą danych
