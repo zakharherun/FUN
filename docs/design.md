@@ -139,6 +139,28 @@ Skala rozmiarów (zgodna z makietami): slogan na ekranie logowania 36 px / tytu�
 
 ![Logo](logo/logo.png)
 
-Plik: [logo.png](logo/logo.png)
+Plik: [logo.png](logo/logo.png). Ta sama wersja jest dostępna dla aplikacji w [frontend/assets/logo.png](../frontend/assets/logo.png).
 
 **Idea:** zaokrąglony kwadrat w kolorze głównym (`#4F46E5`) ze znakiem ✓ (zadanie wykonane) i bursztynową kropką (`#F59E0B`) jako „iskrą” radości (FUN). Napis „FUN” w Poppins Bold, podpis „task manager” w Poppins Regular. Znak jest prosty i czytelny nawet w małym rozmiarze (np. jako favicon).
+
+## 5. Ikony
+
+Ikony są w katalogu [frontend/assets](../frontend/assets), w formacie SVG, w siatce 24 × 24 px, o stałej grubości kreski 2 px i zaokrąglonych końcach (jednolity styl liniowy). Kolory pochodzą z palety: usuwanie `#B91C1C`, dodawanie `#4F46E5`, potwierdzenie `#0F766E`, pozostałe `#475569`.
+
+| Ikona | Plik | Zastosowanie |
+|---|---|---|
+| ![add](../frontend/assets/icon-add.svg) | `icon-add.svg` | Nowe zadanie |
+| ![edit](../frontend/assets/icon-edit.svg) | `icon-edit.svg` | Edycja zadania |
+| ![delete](../frontend/assets/icon-delete.svg) | `icon-delete.svg` | Usuwanie zadania |
+| ![search](../frontend/assets/icon-search.svg) | `icon-search.svg` | Wyszukiwarka |
+| ![filter](../frontend/assets/icon-filter.svg) | `icon-filter.svg` | Filtr statusu |
+| ![calendar](../frontend/assets/icon-calendar.svg) | `icon-calendar.svg` | Termin zadania |
+| ![check](../frontend/assets/icon-check.svg) | `icon-check.svg` | Zadanie zrobione |
+| ![tasks](../frontend/assets/icon-tasks.svg) | `icon-tasks.svg` | Lista zadań |
+| ![comment](../frontend/assets/icon-comment.svg) | `icon-comment.svg` | Komentarze |
+| ![user](../frontend/assets/icon-user.svg) | `icon-user.svg` | Profil użytkownika |
+| ![settings](../frontend/assets/icon-settings.svg) | `icon-settings.svg` | Ustawienia |
+| ![logout](../frontend/assets/icon-logout.svg) | `icon-logout.svg` | Wylogowanie |
+| ![close](../frontend/assets/icon-close.svg) | `icon-close.svg` | Zamknięcie okna |
+
+Użycie w HTML: `<img src="assets/icon-edit.svg" alt="Edytuj" width="24" height="24">`
