@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "Przygotować makietę",
+    "description": "Ekran listy i formularza",
+    "status": "done",
+    "author": "anna",
+    "created_at": "2026-10-16T13:16:12"
+  },
+  {
+    "id": 2,
+    "title": "Utworzyć tabele",
+    "description": "Users, Tasks, Comments",
+    "status": "in_progress",
+    "author": "anna",
+    "created_at": "2026-10-16T13:16:12"
+  },
+  {
+    "id": 3,
+    "title": "Napisać README",
+    "description": null,
+    "status": "new",
+    "author": "piotr",
+    "created_at": "2026-10-16T13:16:12"
+  },
+  {
+    "id": 4,
+    "title": "Skonfigurować CI",
+    "description": "Workflow dla frontendu",
+    "status": "done",
+    "author": "admin",
+    "created_at": "2026-10-16T13:16:12"
+  },
+  {
+    "id": 5,
+    "title": "Dodać filtrowanie",
+    "description": "Po tytule i statusie",
+    "status": "new",
+    "author": "piotr",
+    "created_at": "2026-10-16T13:16:12"
+  },
+  {
+    "id": 6,
+    "title": "Zaprojektować logo",
+    "description": "Prosty znak aplikacji",
+    "status": "in_progress",
+    "author": "kasia",
+    "created_at": "2026-10-16T13:16:12"
+  },
+  {
+    "id": 7,
+    "title": "Przygotować dane testowe",
+    "description": "Minimum 5 rekordów w każdej tabeli",
+    "status": "new",
+    "author": "marek",
+    "created_at": "2026-10-16T13:16:12"
+  }
+]
