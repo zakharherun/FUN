@@ -1,0 +1,15 @@
+# sekrety i konfiguracja lokalna (hasło do PostgreSQL)
+.env
+appsettings.Local.json
+
+# .NET
+bin/
+obj/
+.vs/
+
+# Node
+node_modules/
+
+# system i edytory
+Thumbs.db
+.DS_Store
