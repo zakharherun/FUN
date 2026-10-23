@@ -1,6 +1,10 @@
 "use strict";
 
-const API_URL = "http://localhost:5000/api/tasks";
+// Adres backendu ASP.NET (profil http w launchSettings.json).
+const API_URL = "http://localhost:5113/api/tasks";
+
+// Dopóki nie ma logowania, nowe zadania zapisujemy jako użytkownik o id 1 (admin z insert-data.sql).
+const CURRENT_USER_ID = 1;
 
 const form = document.getElementById("task-form");
 const formTitle = document.getElementById("form-title");
@@ -38,9 +42,28 @@ async function request(url, method, data) {
 
   const body = await response.json().catch(() => ({}));
   if (!response.ok) {
-    throw new Error(body.error || "Błąd serwera.");
+    throw new Error(errorMessage(response.status, body));
   }
   return body;
+}
+
+// Zamienia odpowiedź z błędem na tekst dla użytkownika.
+function errorMessage(status, body) {
+  // format z kontraktu API: { "error": "Tytuł jest wymagany." }
+  if (body.error) {
+    return body.error;
+  }
+  // format ASP.NET: { "errors": { "Title": ["Tytuł jest wymagany."] } }
+  if (body.errors) {
+    const first = Object.values(body.errors)[0];
+    if (first && first.length > 0) {
+      return first[0];
+    }
+  }
+  if (status === 404) {
+    return "Nie znaleziono zadania.";
+  }
+  return "Błąd serwera (" + status + ").";
 }
 
 function createButton(text, className, onClick) {
@@ -168,7 +191,7 @@ form.addEventListener("submit", async (event) => {
 
   try {
     if (editingId === null) {
-      await request(API_URL, "POST", task);
+      await request(API_URL, "POST", { ...task, userId: CURRENT_USER_ID });
       showMessage("Dodano zadanie.");
     } else {
       await request(API_URL + "/" + editingId, "PUT", task);
