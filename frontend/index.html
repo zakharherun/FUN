@@ -1,12 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FUN Task Manager</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Hello</h1>
-  <script src="js/app.js"></script>
+  <header class="app-header">
+    <div class="app-header-inner">
+      <h1 class="app-title">
+        <img class="logo" src="assets/logo.png" alt="FUN task manager" width="140" height="40">
+      </h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <p id="message" class="message" role="status" aria-live="polite" hidden></p>
+
+    <section class="card form-panel" aria-labelledby="form-title">
+      <h2 id="form-title">Nowe zadanie</h2>
+      <form id="task-form" class="task-form" novalidate>
+        <div class="field field-title">
+          <label for="title">Tytuł <span class="required">(wymagane)</span></label>
+          <input id="title" name="title" type="text" required maxlength="200" autocomplete="off">
+        </div>
+        <div class="field field-description">
+          <label for="description">Opis</label>
+          <textarea id="description" name="description" rows="3" maxlength="1000"></textarea>
+        </div>
+        <div class="field field-status">
+          <label for="status">Status</label>
+          <select id="status" name="status">
+            <option value="new">Nowe</option>
+            <option value="in_progress">W trakcie</option>
+            <option value="done">Zakończone</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button id="submit-button" class="btn btn-primary" type="submit">Dodaj zadanie</button>
+          <button id="cancel-button" class="btn btn-secondary" type="button" hidden>Anuluj</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="board-panel" aria-labelledby="board-title">
+      <h2 id="board-title">Tablica zadań</h2>
+      <div id="board" class="board">
+        <section class="column column-new" aria-labelledby="title-new">
+          <h3 id="title-new" class="column-title">Nowe <span id="count-new" class="count">0</span></h3>
+          <ul id="list-new" class="task-list"></ul>
+        </section>
+        <section class="column column-in-progress" aria-labelledby="title-in-progress">
+          <h3 id="title-in-progress" class="column-title">W trakcie <span id="count-in_progress" class="count">0</span></h3>
+          <ul id="list-in_progress" class="task-list"></ul>
+        </section>
+        <section class="column column-done" aria-labelledby="title-done">
+          <h3 id="title-done" class="column-title">Zakończone <span id="count-done" class="count">0</span></h3>
+          <ul id="list-done" class="task-list"></ul>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js" defer></script>
 </body>
 </html>
