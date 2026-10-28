@@ -6,10 +6,13 @@ Nie wymaga instalowania żadnych bibliotek, potrzebny jest tylko Node.js.
 ## Uruchomienie
 
 ```
-node tools/mock-api/server.js
+PORT=5113 node tools/mock-api/server.js
 ```
 
-Potem otwórz w przeglądarce: http://localhost:5000
+Potem otwórz w przeglądarce: http://localhost:5113
+
+Port 5113 jest taki sam jak w prawdziwym backendzie, bo na niego wskazuje `API_URL` w `frontend/js/app.js`.
+W PowerShell zamiast `PORT=5113 node …` wpisz: `$env:PORT=5113; node tools/mock-api/server.js`.
 
 Serwer działa zgodnie z kontraktem API:
 
