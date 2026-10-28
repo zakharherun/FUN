@@ -2,28 +2,30 @@
 
 ASP.NET Core Web API (.NET 10) + Entity Framework Core + PostgreSQL.
 
-> Masz starszą wersję kodu (pod SQL Server)? Zobacz [MIGRACJA-POSTGRESQL.md](MIGRACJA-POSTGRESQL.md).
+Projekt powstał na podstawie przykładowego backendu prowadzącego i został dostosowany do PostgreSQL
+(pakiet `Npgsql.EntityFrameworkCore.PostgreSQL`, `UseNpgsql`, domyślna data `now()`).
 
 ## Baza danych
 
-API korzysta z bazy `task_manager` (tabele `users`, `tasks`, `comments`).
-Schemat jest w pliku [`database/schema.postgresql.sql`](../database/schema.postgresql.sql) –
-API nie tworzy ani nie zmienia tabel (brak migracji EF).
+API korzysta z bazy `taskmanager-db` (tabele `users`, `tasks`, `comments`).
+Schemat jest w pliku [`database/table-schema.sql`](../database/table-schema.sql), dane testowe
+w [`database/insert-data.sql`](../database/insert-data.sql) – API nie tworzy ani nie zmienia tabel (brak migracji EF).
 
-1. Utwórz bazę i tabele (z katalogu głównego repozytorium):
+1. Utwórz bazę, tabele i dane testowe (z katalogu głównego repozytorium):
 
    ```bash
-   psql -U postgres -c "CREATE DATABASE task_manager"
-   psql -U postgres -d task_manager -f database/schema.postgresql.sql
+   psql -U postgres -c "CREATE DATABASE \"taskmanager-db\""
+   psql -U postgres -d taskmanager-db -f database/table-schema.sql
+   psql -U postgres -d taskmanager-db -f database/insert-data.sql
    ```
 
-   Albo w pgAdmin: utwórz bazę `task_manager`, otwórz na niej *Query Tool* i uruchom zawartość pliku.
+   Albo w pgAdmin: utwórz bazę `taskmanager-db`, otwórz na niej *Query Tool* i uruchom po kolei oba pliki.
 
 2. Skopiuj `TaskManager.Api/appsettings.Local.example.json` do `TaskManager.Api/appsettings.Local.json`
    (plik jest w `.gitignore` – hasło nie trafia do repozytorium) i wpisz swoje hasło:
 
    ```
-   Host=localhost;Port=5432;Database=task_manager;Username=postgres;Password=HASLO
+   Host=localhost;Port=5432;Database=taskmanager-db;Username=postgres;Password=HASLO
    ```
 
    Można też użyć zmiennej środowiskowej `ConnectionStrings__TaskManagerDb`.
