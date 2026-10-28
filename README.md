@@ -187,10 +187,6 @@ Pełna lista (również komentarze i użytkownicy): [backend/README.md](backend/
 - [backend/README.md](backend/README.md) – backend i wszystkie endpointy,
 - [frontend/README.md](frontend/README.md) – założenia frontendu.
 
-## Użycie AI
-
-Podczas pracy korzystałem z asystenta AI (Claude) jako pomocy: przy wyjaśnianiu zadań, szukaniu błędów (np. zły adres API w `app.js`), pisaniu fragmentów kodu frontendu, poprawce skryptu `insert-data.sql` oraz przy tym README. Backend powstał na podstawie przykładowego projektu prowadzącego i został dostosowany do PostgreSQL. Każdą zmianę uruchomiłem i sprawdziłem, a za kod w repozytorium odpowiadam jak za własny.
-
 ## Autor
 
-Zakhar Herun – praktyki zawodowe INF.03, 2026.
+Zakhar Herun
